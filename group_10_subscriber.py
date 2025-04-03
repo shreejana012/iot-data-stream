@@ -29,13 +29,13 @@ class Subscriber:
             
             # Handle missing or corrupted data
             if isinstance(data, str) and "CORRUPTED" in data:
-                message = "⚠️ Received Corrupted Data!"
+                message = "Received Corrupted Data!"
             elif "value" in data:
                 value = data["value"]
                 if value < 10 or value > 40:  # Example range check
-                    message += " ⚠️ (Out of range!)"
+                    message += "Out of range!"
             else:
-                message = "⚠️ Missing or Invalid Data!"
+                message = "Missing or Invalid Data!"
 
             print(message)
             if self.gui:
